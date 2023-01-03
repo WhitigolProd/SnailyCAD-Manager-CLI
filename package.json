@@ -1,0 +1,35 @@
+{
+    "name": "snailycad-manager-linux",
+    "version": "1.0.0",
+    "description": "SnailyCAD Manager for Linux Operating Systems",
+    "type": "module",
+    "main": "index.js",
+    "bin": {
+        "snailycad-manager-linux": "./index.js",
+        "scm": "./index.js"
+    },
+    "scripts": {
+        "dev": ""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/WhitigolProd/SnailyCAD-Manager-Linux.git"
+    },
+    "author": "Whitigol Web Design",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/WhitigolProd/SnailyCAD-Manager-Linux/issues"
+    },
+    "homepage": "https://github.com/WhitigolProd/SnailyCAD-Manager-Linux#readme",
+    "dependencies": {
+        "chalk": "^5.2.0",
+        "ejs": "^3.1.8",
+        "express": "^4.18.2",
+        "inquirer": "^9.1.4",
+        "nanospinner": "^1.1.0",
+        "tailwindcss": "^3.2.4"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.20"
+    }
+}
