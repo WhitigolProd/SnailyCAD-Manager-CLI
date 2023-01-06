@@ -1,5 +1,6 @@
 import inquirer from 'inquirer';
 import { isServerOnline } from '../utils/status.js';
+import { appSetup } from './appSetup.js';
 
 const getList = async () => {
     if (await isServerOnline()) {
@@ -48,7 +49,7 @@ export const mainMenu = async () => {
             message: 'What would you like to do?',
             choices: list,
         })
-        .then((answers) => {
+        .then(async (answers) => {
             const answer = answers.menu;
 
             switch (answer) {
@@ -62,7 +63,8 @@ export const mainMenu = async () => {
                     console.log('Restarting server...');
                     break;
                 case 'port':
-                    console.log('Changing port...');
+                    console.log('Opening App Setup...');
+                    await appSetup();
                     break;
                 case 'exit':
                     console.log('Exiting...');

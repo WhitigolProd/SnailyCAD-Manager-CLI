@@ -1,5 +1,6 @@
 import chalk from 'chalk';
 import inquirer from 'inquirer';
+import { loadApp } from '../utils/load.js';
 import { storage } from '../utils/storage.js';
 
 export const appSetup = async () => {
@@ -12,8 +13,9 @@ export const appSetup = async () => {
             )} be a 4-5 digit number. If you are unsure, leave this blank and the default port will be used (3050).`,
             default: 3000,
         })
-        .then((answers) => {
+        .then(async (answers) => {
             const answer = answers.setup;
             storage('remotePort').write(answer);
+            await loadApp();
         });
 };

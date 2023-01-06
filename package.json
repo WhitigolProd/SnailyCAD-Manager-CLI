@@ -1,7 +1,7 @@
 {
-    "name": "snailycad-manager-linux",
-    "version": "1.0.0",
-    "description": "SnailyCAD Manager for Linux Operating Systems",
+    "name": "snailycad-manager",
+    "version": "0.0.0",
+    "description": "SnailyCAD Manager CLI",
     "type": "module",
     "main": "index.js",
     "bin": {
@@ -20,8 +20,9 @@
     "bugs": {
         "url": "https://github.com/WhitigolProd/SnailyCAD-Manager-Linux/issues"
     },
-    "homepage": "https://github.com/WhitigolProd/SnailyCAD-Manager-Linux#readme",
+    "homepage": "https://manager.cossys.tk/",
     "dependencies": {
+        "axios": "^1.2.2",
         "chalk": "^5.2.0",
         "ejs": "^3.1.8",
         "express": "^4.18.2",
@@ -29,15 +30,18 @@
         "find-process": "^1.4.7",
         "inquirer": "^9.1.4",
         "nanospinner": "^1.1.0",
+        "node-localstorage": "^2.2.1",
         "tailwindcss": "^3.2.4"
     },
     "devDependencies": {
+        "@types/axios": "^0.14.0",
         "@types/chalk": "^2.2.0",
         "@types/ejs": "^3.1.1",
         "@types/express": "^4.17.15",
         "@types/express-session": "^1.17.5",
         "@types/find-process": "^1.2.0",
         "@types/inquirer": "^9.0.3",
+        "@types/node-localstorage": "^1.3.0",
         "@types/nodemon": "^1.19.2",
         "@types/tailwindcss": "^3.1.0",
         "@types/typescript": "^2.0.0",

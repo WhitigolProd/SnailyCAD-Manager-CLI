@@ -1,5 +1,8 @@
 import fs from 'fs';
+import { LocalStorage } from 'node-localstorage';
 import path from 'path';
+LocalStorage;
+export const localStorage = new LocalStorage(path.join(process.cwd(), '/data'));
 
 const storageClass = class {
     key: string = '';
@@ -8,15 +11,11 @@ const storageClass = class {
     }
 
     read() {
-        const filePath = path.join(process.cwd(), '/data/settings.json');
-        const data = JSON.parse(fs.readFileSync(filePath, 'utf8'))[this.key];
-        return data;
+        return localStorage.getItem(this.key);
     }
 
-    write(value: storageWrite) {
-        const filePath = path.join(process.cwd(), '/data/settings.json');
-        const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-        data[this.key] = value;
+    write(value: string) {
+        return localStorage.setItem(this.key, value);
     }
 };
 

@@ -127,4 +127,4 @@ dist
 .pnp.*
 
 # Custom files
-data/settings.json
+data/*
