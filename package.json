@@ -1,6 +1,6 @@
 {
     "name": "snailycad-manager",
-    "version": "0.0.0",
+    "version": "0.0.0-dev.0",
     "description": "SnailyCAD Manager CLI",
     "type": "module",
     "main": "index.js",

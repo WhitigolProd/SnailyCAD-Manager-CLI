@@ -1,2 +1,3 @@
-# SnailyCAD-Manager-Linux
- SnailyCAD Manager for Linux Operating Systems
+# SnailyCAD Manager (CLI)
+
+SnailyCAD Manager via the Command Line!
