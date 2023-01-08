@@ -16,18 +16,16 @@ app.use(
     })
 );
 
-export const startRemoteServer = async () => {
-    const port = await storage('remotePort').read();
+const port = storage('remotePort').read();
 
-    app.listen(3000, () => {
-        console.log(`Remote server listening at [::]:${port}`);
-        console.log(
-            `${chalk.blueBright(
-                'NOTE:'
-            )} This server is only accessible on your local network until you set up port forwarding, or some sort of reverse proxy.`
-        );
-    });
-};
+app.listen(port, () => {
+    console.log(chalk.greenBright(`Server started on port ${port}!`));
+    console.log(
+        `${chalk.yellowBright(
+            'WARNING:'
+        )} This server is not accessible from the internet unless you have port forwarding, or a reverse proxy set up.`
+    );
+});
 
 // Import Routes
 app.use('/', Routes.MainRouter);
