@@ -41,6 +41,7 @@ const getList = async () => {
 };
 
 export const mainMenu = async () => {
+    console.log(); // New line
     const list = await getList();
     const menu = await inquirer
         .prompt({
