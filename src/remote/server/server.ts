@@ -1,19 +1,41 @@
+// Imports
 import chalk from 'chalk';
 import express from 'express';
 import session from 'express-session';
 import { keyGen } from '../../utils/keyGen.js';
 import { storage } from '../../utils/storage.js';
 import { Routes } from './routes/routes.js';
+import path from 'path';
+
+// App
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', '../client/views');
+app.set('views', path.join(process.cwd(), '/src/remote/client/views'));
 app.use(
     session({
         secret: keyGen(32),
         resave: false,
         saveUninitialized: false,
     })
+);
+app.use(express.urlencoded({ extended: true }));
+
+// Static Files
+app.use(
+    '/ace',
+    express.static(
+        path.join(process.cwd(), '/node_modules/ace-builds/src-min-noconflict')
+    )
+);
+app.use(
+    '/styles',
+    express.static(path.join(process.cwd(), '/dist/remote/client/styles'))
+);
+
+app.use(
+    '/scripts',
+    express.static(path.join(process.cwd(), '/dist/remote/client/scripts'))
 );
 
 const port = storage('remotePort').read();

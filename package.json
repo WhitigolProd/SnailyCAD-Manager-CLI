@@ -9,7 +9,11 @@
         "scm": "./dist/index.js"
     },
     "scripts": {
-        "dev": "tsc -w"
+        "dev": "npx concurrently \"npm run dev:client\" \"npm run dev:typescript\"",
+        "dev:client": "npx concurrently \"npm run dev:client:tailwind\" \"npm run dev:client:nodemon\"",
+        "dev:client:tailwind": "npx tailwindcss -w -i ./dist/remote/client/styles/index.min.css -o ./dist/remote/client/styles/tailwind.css",
+        "dev:client:nodemon": "nodemon ./dist/remote/server/server.js",
+        "dev:typescript": "tsc -w"
     },
     "repository": {
         "type": "git",
@@ -23,6 +27,7 @@
     "homepage": "https://manager.cossys.tk/",
     "dependencies": {
         "@types/kill-port": "^2.0.0",
+        "ace-builds": "^1.14.0",
         "axios": "^1.2.2",
         "chalk": "^5.2.0",
         "ejs": "^3.1.8",

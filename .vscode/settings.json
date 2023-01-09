@@ -1,0 +1,11 @@
+{
+    "liveSassCompile.settings.compileOnWatch": true,
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "/dist/remote/client/styles",
+            "savePathReplacementPairs": null
+        }
+    ]
+}

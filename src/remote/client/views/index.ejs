@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Remote [SnailyCAD Manager]</title>
+        <%- include('partials/_head') %>
+
+        <script src="/scripts/main/index.js" defer></script>
+        <script src="/ace/ace.js" defer></script>
     </head>
-    <body></body>
+    <body>
+        <div class="container">
+            <article>
+                <header>
+                    <div>
+                        <span>SnailyCAD</span>
+                        <span class="text-xs text-muted">Manage SnailyCAD</span>
+                    </div>
+                </header>
+
+                <div class="flex flex-col justify-center items-center gap-2">
+                    <i class="ico">warning</i>
+                    <div class="badge badge-primary">TEST</div>
+                </div>
+            </article>
+        </div>
+
+        <span class="session">Session ID: <%= session.id %></span>
+    </body>
 </html>

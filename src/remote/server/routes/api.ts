@@ -11,6 +11,19 @@ router.use((req, res, next) => {
     next();
 });
 
+router.get('/', (req, res) => {
+    res.status(200).send('API Online');
+});
+
+router.post('/test', (req, res) => {
+    const page = {
+        title: req.body.test,
+    };
+    res.render('auth', {
+        page,
+    });
+});
+
 // Export
 const ApiRouter = router;
 export default ApiRouter;

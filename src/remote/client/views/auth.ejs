@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login [SnailyCAD Manager]</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <%- include('partials/_head') %>
+    </head>
+    <body>
+        <div class="btn md success">This is a test button</div>
+        <form action="/api/test">
+            <input type="text" name="test" value="test" />
+            <input type="submit" value="Submit" />
+        </form>
+    </body>
 </html>
